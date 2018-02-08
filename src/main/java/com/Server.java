@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * A {@link io.vertx.core.Verticle} which implements a simple, realtime,
  * multiuser chat. Anyone can connect to the chat application on port
- * 8000 and type messages. The messages will be rebroadcast to all
+ * 8888 and type messages. The messages will be rebroadcast to all
  * connected users via the @{link EventBus} Websocket bridge.
  *
  * @author <a href="https://github.com/InfoSec812">Deven Phillips</a>
