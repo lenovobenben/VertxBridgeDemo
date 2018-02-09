@@ -41,7 +41,8 @@
 
         div.inset {
             height: 500px;
-            white-space: pre-wrap
+            white-space: pre-wrap;
+            overflow: scroll;
         }
     </style>
 </head>
@@ -50,7 +51,12 @@
     var eb = new EventBus("/eventbus/");
     eb.onopen = function () {
         eb.registerHandler("chat.to.client", function (err, msg) {
-            $('#chat').append(msg.body + "\n");
+            var chatDiv = $('#chat');
+
+            chatDiv.append(msg.body + "\n");
+
+            var scrollHeight = chatDiv.prop("scrollHeight");
+            chatDiv.animate({scrollTop:scrollHeight}, 400);
         });
     };
 
